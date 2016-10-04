@@ -1,3 +1,2 @@
 all:
-	g++ /inc -c src/*.cpp -o obj/*.o
-	ar rcs lib/*.a obj/*.o
+	g++ main.cpp src/*.cpp -O2 -o main
