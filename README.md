@@ -14,3 +14,18 @@ Uma versão embrionária de uma biblioteca de otimização open source com imple
   
 ##Algoritmos Gulosos
   3. Mochila Fracionária [@anjoshigor](https://github.com/anjoshigor/anjoshigor)
+  4. Coloração de Grafos [@anjoshigor](https://github.com/anjoshigor/anjoshigor)
+
+###Estrutura da biblioteca
+`inc/` -- diretório contendo todos os cabeçalhos de cada problema.
+
+`src/` -- diretório contendo a implementação de cada problema.
+
+`tests/` -- diretórico contendo programas que testa a implementação dos problemas.
+
+`inputs/` -- diretório contendo um conjunto de entradas utilizadas pelos programas que testam a implementação dos problemas. As entradas podem ser randômicas, com resultados simples de ser verificado ou que busca atuar sobre os "corner cases" de cada problema.
+
+`gerador.py` -- em alguns problemas, é possível utilizar entradas randomicas e verificar o resultado. Este script em python é responsável por gerar essas entradas.
+
+###Makefile
+a ser alterado
