@@ -9,6 +9,7 @@ Uma versão embrionária de uma biblioteca de otimização open source com imple
   6. Distância de edição [@anjoshigor](https://github.com/anjoshigor/anjoshigor)
   7. Troco em moedas [@alvesmarcos](https://github.com/anjoshigor/alvesmarcos)
   8. Triângulo de Pascal [@alvesmarcos](https://github.com/anjoshigor/alvesmarcos)
+  9. Empilhamento de caixas [@alvesmarcos](https://github.com/anjoshigor/alvesmarcos)
   
 ##Algoritmos Gulosos
   3. Mochila Fracionária [@anjoshigor](https://github.com/anjoshigor/anjoshigor)
