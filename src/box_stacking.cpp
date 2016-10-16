@@ -5,13 +5,13 @@
 
 #include "../inc/box_stacking.hpp"
 
-int dynamic::box_stacking(const std::vector<dynamic::box>& boxes){
+int dynamic::box_stacking(const std::vector<dynamic::box_t>& boxes){
 	// quantidade de caixas para utilização
 	int len_boxes = boxes.size();
 	
 	// todas maneiras possiveis de se mexer na alterar a base da caixa
 	// largura | altura | profundidade = 3 
-	std::vector<box> ways;
+	std::vector<box_t> ways;
 
 	for(int i = 0 ; i < len_boxes ; ++i){
 		// 1º maneira caixa original
@@ -25,7 +25,7 @@ int dynamic::box_stacking(const std::vector<dynamic::box>& boxes){
 	// customizando função sort (função objeto)
 	struct {
 		// testando as areas das de duas caixas
-		bool operator()(const box& a, const box& b){
+		bool operator()(const box_t& a, const box_t& b){
 			return a.depth * a.width > b.depth * b.width;
 		}
 	} compareTo;
@@ -36,7 +36,7 @@ int dynamic::box_stacking(const std::vector<dynamic::box>& boxes){
 	// todas as alturas possíveis
 	std::vector<int> max_stack_height;
 
-	for(box b: ways)
+	for(box_t b: ways)
 		max_stack_height.push_back(b.height);
 	
 	// tamanho do array de todas as alturas

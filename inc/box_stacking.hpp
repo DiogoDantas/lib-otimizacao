@@ -12,15 +12,15 @@ namespace dynamic {
 	/**
 	 * @brief      Estrutura com as especificações da caixa.
 	 */
-	struct box { int height, width, depth; };
+	struct box_t { int height, width, depth; };
 	/**
-	 * @brief      { function_description }
+	 * @brief      Calcular a maior altura formada pelo empilhamento de caixas.
 	 *
-	 * @param[in]  boxes  The boxes
+	 * @param[in]  boxes  As caixas com suas especificações.
 	 *
-	 * @return     { description_of_the_return_value }
+	 * @return     Altura máxima.
 	 */
-	int box_stacking(const std::vector<box>& boxes);
+	int box_stacking(const std::vector<box_t>& boxes);
 }
 
 #endif //BOX_STACKING_HPP
