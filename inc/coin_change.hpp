@@ -7,7 +7,7 @@
 
 #include <vector> // std::vector
 
-namespace dymamic {
+namespace dynamic {
 	/**
 	 * @brief      Encontrar o número de maneiras possíveis de dar troco.
 	 *
