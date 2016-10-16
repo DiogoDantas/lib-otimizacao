@@ -54,9 +54,50 @@ A solução implementada [aqui](https://github.com/anjoshigor/lib-otimizacao/blo
   
 7) Troco em moedas
 ------
+
+  **Descrição**
   
+  Dado um troco (N) e um conjunto de moedas (S), encontrar quantas possibilidades existem de se formar o troco, com as moedas contidas no conjunto. A ordem das moedas não importa.
+
+  
+  **Exemplo**
+  
+  Dado N = 4 e S = {1,2,3}
+  
+  O maior conjunto de possibilidades que podemos conseguir é **4**, são elas:  
+
+  `{1,1,1,1},{1,1,2},{2,2},{1,3}`
+    
+  **Complexidade**
+  
+A solução implementada [aqui](https://github.com/anjoshigor/lib-otimizacao/blob/master/src/coin_change.cpp) possui complexidade *O(mn)* de tempo, onde m é o tamanho conjunto de moedas e n do troco, e linear *O(n)* de espaço.
+
 8) Triângulo de Pascal
 ------
+
+  **Descrição**
   
+  Dado n e k encontrar o valor do coeficiente binomial utilizado no triângulo de Pascal. Mais informações sobre coeficiente binomial pode ser encontrada [aqui](https://pt.wikipedia.org/wiki/Coeficiente_binomial).
+  
+  **Exemplo**
+  
+  Dado N = 4 e K = 2
+  
+  O valor coeficiente binomial  C (4, 2) é **6**.
+    
+  **Complexidade**
+  
+A solução implementada [aqui](https://github.com/anjoshigor/lib-otimizacao/blob/master/src/binomial_coefficient.cpp) possui complexidade *O(nk)* de tempo e linear *O(n)* de espaço.  
+
 9) Empilhamento de caixas
 ------
+ **Descrição**
+ 
+ Suponha que sejam dadas **N** caixas. Cada caixa tem uma altura h, uma largura w e uma profundidade d. Deseja-se saber qual é a altura máxima formada pelo empilhamento de caixas, de forma que só é permitido empilhar uma caixa sobre outra, se as dimensões da base da caixa inferior forem estritamente maiores do que as respectivas dimensões da base da caixa superior.  Lembrando que você pode rotacionar uma caixa para que qualquer uma de suas faces faça o papel da base.
+  
+  **Exemplo**
+  
+    
+  **Complexidade**
+  
+A solução implementada [aqui](https://github.com/anjoshigor/lib-otimizacao/blob/master/src/box_staking.cpp) possui complexidade quadrática *O(n²)* de tempo e linear *O(n²)* de espaço.
