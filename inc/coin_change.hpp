@@ -11,10 +11,10 @@ namespace dynamic {
 	/**
 	 * @brief      Encontrar o número de maneiras possíveis de dar troco.
 	 *
-	 * @param      s     vetor com possíveis moedas
-	 * @param[in]  n     valor total a ser subtraído
+	 * @param      s     Vetor com possíveis moedas
+	 * @param[in]  n     Valor total a ser subtraído
 	 *
-	 * @return     Maior número de formas possível para dar o troco
+	 * @return     Maior número de formas possível para dar o troco.
 	 */
 	int coin_change(const std::vector<int>& s, int n);
 }

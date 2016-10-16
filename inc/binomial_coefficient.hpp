@@ -11,8 +11,8 @@ namespace dynamic {
 	/**
 	 * @brief      Calcula o coeficiente binomial  
 	 *
-	 * @param[in]  n     linha
-	 * @param[in]  k     coluna
+	 * @param[in]  n     Linha
+	 * @param[in]  k     Coluna
 	 *
 	 * @return     O coeficiente binomial.
 	 */

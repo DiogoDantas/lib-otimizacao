@@ -21,17 +21,9 @@ int dynamic::box_stacking(const std::vector<dynamic::box_t>& boxes){
 		// 3º maneira altura <-> profundidade
 		ways.push_back({boxes[i].depth, boxes[i].height, boxes[i].width});
 	}
-	
-	// customizando função sort (função objeto)
-	struct {
-		// testando as areas das de duas caixas
-		bool operator()(const box_t& a, const box_t& b){
-			return a.depth * a.width > b.depth * b.width;
-		}
-	} compareTo;
 
 	// ordenando em ordem decrescente as areas
-	std::sort(ways.begin(), ways.end(), compareTo);
+	std::sort(ways.begin(), ways.end());
 	
 	// todas as alturas possíveis
 	std::vector<int> max_stack_height;
@@ -56,3 +48,4 @@ int dynamic::box_stacking(const std::vector<dynamic::box_t>& boxes){
 
 	return max;
 }
+
