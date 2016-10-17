@@ -1,4 +1,4 @@
-#include "../inc/soma_subconjunto.hpp"
+#include "../inc/subset_sum.hpp"
 #include <iostream>
 
 int main(int argc, char const *argv[])
@@ -20,7 +20,7 @@ int main(int argc, char const *argv[])
 
     std::cin >> sum;
 
-    if (dinamica::soma_subconjunto(set, N, sum))
+    if (dynamic::subset_sum(set, N, sum))
       std::cout << "Yes" << std::endl;
     else
       std::cout << "No" << std::endl;
