@@ -14,6 +14,7 @@ Uma versão embrionária de uma biblioteca de otimização open source com imple
 
 ##Algoritmos Gulosos
   1. Dijkstra [@DiogoDantas](https://github.com/DiogoDantas)
+  2. Prim [@DiogoDantas](https://github.com/DiogoDantas)
   3. Mochila Fracionária [@anjoshigor](https://github.com/anjoshigor)
   4. Coloração de Grafos [@anjoshigor](https://github.com/anjoshigor)
   5. Compressão de dados (Código de Huffman) [@alvesmarcos](https://github.com/alvesmarcos)
