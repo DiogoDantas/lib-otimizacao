@@ -31,7 +31,7 @@ int main(int argc, char const *argv[])
 
     	std::cin >> source;
 
-    	greed::dijkstra(graph,source,num_vertices);
+    	greedy::dijkstra(graph,source,num_vertices);
 
     	T--;
     }
