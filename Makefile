@@ -57,14 +57,15 @@ testG4: mkdir
 	g++ src/graph_coloring.cpp tests/test_graph_coloring.cpp -std=c++11 -O2 -o obj/test_color_graf.o
 	./obj/test_color_graf.o < inputs/input_graph_coloring.in
 
+testG5: mkdir
+	g++ src/huffman.cpp tests/test_huffman.cpp -std=c++11 -O2 -o obj/test_huffman.o
+	./obj/test_huffman.o < inputs/in_huffman/input_huffman.in
+
+testG6: mkdir
+	g++ src/activity_selection.cpp tests/test_activity_selection.cpp -std=c++11 -O2 -o obj/test_activity_selection.o
+	./obj/test_activity_selection.o < inputs/in_activity_selection/input_activity_selection.in
+
 all: dynamic greedy
-#	mkdir obj
-
-#	g++ src/*.cpp tests/test_dijkstra.cpp -std=c++11 -O2 -o obj/test_dijkstra.o
-#	g++ src/*.cpp tests/test_prim.cpp -std=c++11 -O2 -o obj/test_prim.o
-
-#	./obj/test_dijkstra.o < inputs/in_dijkstra/input_dijkstra.in
-#	./obj/test_prim.o < inputs/input_prim.in
 
 dynamic: testD1 testD2 testD3 testD4 testD5 testD6 testD7 testD8 testD9
 
