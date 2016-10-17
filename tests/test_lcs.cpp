@@ -1,5 +1,5 @@
 #include <iostream>
-#include "../inc/maior_subs_comum.hpp"
+#include "../inc/lcs.hpp"
 int main(int argc, char const *argv[]) {
   int n;
   std::cin >> n;
@@ -14,7 +14,7 @@ int main(int argc, char const *argv[]) {
       std::cin >> X;
       std::cin >> Y;
 
-      std::cout<< "Length of LCS is " << dinamica::lcs( X, Y, m, n ) << std::endl;
+      std::cout<< "LCS " << dynamic::lcs( X, Y, m, n ) << std::endl;
 
   }
 
