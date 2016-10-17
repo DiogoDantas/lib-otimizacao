@@ -25,7 +25,7 @@ Uma versão embrionária de uma biblioteca de otimização open source com imple
 
 `src/` -- diretório contendo a implementação de cada problema.
 
-`tests/` -- diretórico contendo programas que testa a implementação dos problemas.
+`tests/` -- diretórico contendo programas que testam a implementação dos problemas.
 
 `inputs/` -- diretório contendo um conjunto de entradas utilizadas pelos programas que testam a implementação dos problemas. As entradas podem ser randômicas, com resultados simples de ser verificado ou que busca atuar sobre os "corner cases" de cada problema.
 
@@ -34,4 +34,23 @@ Uma versão embrionária de uma biblioteca de otimização open source com imple
 `gerador.py` -- em alguns problemas, é possível utilizar entradas randomicas e verificar o resultado. Este script em python é responsável por gerar essas entradas.
 
 ###Makefile
-a ser alterado
+
+####Para testar a biblioteca
+
+  `make all`
+
+####Para testar por categoria
+
+  `make dynamic` ou `make greedy`
+
+####Para testar um problema específico
+
+  `make testD1` ou `make testG5`
+  
+  onde *D* significa **dinâmica** e *G* significa **gulosos** e o número identifica o problema de acordo com a lista acima
+
+#####Observação
+
+  Entre um teste e outro é necessário rodar
+  
+  `make clean` para apagar a pasta com os programas objetos criados
