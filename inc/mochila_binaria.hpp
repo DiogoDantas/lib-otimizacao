@@ -16,7 +16,7 @@
  	 *
  	 * @param[in]  weight         Capacidade da mochila
  	 * @param      weight_vector  Vetor que armazena o peso dos itens
- 	 * @param      values_vector  The que armazena o valor dos itens
+ 	 * @param      values_vector  Vetor que armazena o valor dos itens
  	 * @param[in]  num_itens      Número de itens
  	 *
  	 */
