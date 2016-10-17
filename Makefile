@@ -17,6 +17,10 @@ testD4: mkdir
 	g++ src/lcs.cpp tests/test_lcs.cpp -std=c++11 -O2 -o obj/test_lcs.o
 	./obj/test_lcs.o < inputs/input_lcs.in
 
+testD5: mkdir
+	g++ src/matrix_chain_mult.cpp tests/test_matrix_chain_mult.cpp -std=c++11 -O2 -o obj/test_matrix_chain_mult.o
+	./obj/test_matrix_chain_mult.o < inputs/input_matrix_chain_mult.in
+
 testD6:mkdir
 	g++ src/edit_distance.cpp tests/test_edit_distance.cpp -std=c++11 -O2 -o obj/test_dist_edi.o
 	./obj/test_dist_edi.o < inputs/input_edit_distance.in

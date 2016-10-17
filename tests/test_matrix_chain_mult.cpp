@@ -1,5 +1,5 @@
 #include <iostream>
-#include "../inc/multiplicacao_matrizes.hpp"
+#include "../inc/matrix_chain_mult.hpp"
 
 int main()
 {
@@ -21,7 +21,7 @@ int main()
                 arr[i+1] = q;
         }
 
-        std::cout << "Minimum number of multiplications is "<< dinamica::multiplicacao_matrizes(arr, nmatrix+1)<<std::endl;
+        std::cout << dynamic::matrix_chain_mult(arr, nmatrix+1)<<std::endl;
 
     }
 
