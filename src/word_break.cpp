@@ -20,7 +20,7 @@
     bool wb[size+1];
     memset(wb, 0, sizeof(wb)); // Inicializando os valores como zero
 
-    for (int i=1; i<=size; i++)
+    for (unsigned int i=1; i<=size; i++)
     {
         //Se wb = false devemos testar o prefixo atual
         if (wb[i] == false && dic->dictionary_contais( str.substr(0, i) ))
@@ -33,7 +33,7 @@
             if (i == size)
                 return true;
 
-            for (int j = i+1; j <= size; j++)
+            for (unsigned int j = i+1; j <= size; j++)
             {
                 //Se wb[j] = false podemos atualizar seu valor
                 if (wb[j] == false && dic->dictionary_contais( str.substr(i, j-i) ))
