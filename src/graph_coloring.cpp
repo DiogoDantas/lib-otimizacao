@@ -1,24 +1,24 @@
-#include "../inc/coloracao_grafos.hpp"
+#include "../inc/graph_coloring.hpp"
 #include <vector>
 #include <iostream>
 
-gulosos::Graph::Graph(int v){
+greedy::Graph::Graph(int v){
   this->numberV_ = v;
   this->adjList_ = new std::list<int>[v];
 }
 
-gulosos::Graph::~Graph(){
+greedy::Graph::~Graph(){
     delete [] adjList_;
 }
 
 //Grafico não direcionado fica simetrico na lista
-void gulosos::Graph::addEdge(int v, int w){
+void greedy::Graph::addEdge(int v, int w){
   this->adjList_[v].push_back(w);
   this->adjList_[w].push_back(v);
 }
 
 
-void gulosos::Graph::coloring(){
+void greedy::Graph::coloring(){
 
   //arrays de resultado e de disponibilidade
   std::vector<int> result;

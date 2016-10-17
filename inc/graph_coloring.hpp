@@ -1,8 +1,8 @@
-#ifndef COLOR_GRAF_H_
-#define  COLOR_GRAF_H_
+#ifndef GRAPH_COLORING_HPP
+#define  GRAPH_COLORING_HPP
 #include <list>
 
-namespace gulosos {
+namespace greedy {
   class Graph {
   private:
     int numberV_;
