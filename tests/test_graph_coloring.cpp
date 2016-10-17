@@ -1,4 +1,4 @@
-#include "../inc/coloracao_grafos.hpp"
+#include "../inc/graph_coloring.hpp"
 #include <iostream>
 
 int main(int argc, char const *argv[]) {
@@ -9,7 +9,7 @@ int main(int argc, char const *argv[]) {
     int sizeGraph;
     std::cin >> sizeGraph;
 
-    gulosos::Graph graph(sizeGraph);
+    greedy::Graph graph(sizeGraph);
 
     int node1;
     while (std::cin>>node1) {
@@ -19,7 +19,7 @@ int main(int argc, char const *argv[]) {
       std::cin >> node2;
       graph.addEdge(node1, node2);
     }
-    
+
     graph.coloring();
     std::cout<<"\n";
   }

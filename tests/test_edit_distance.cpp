@@ -1,6 +1,6 @@
 #include <iostream>
 #include <string>
-#include "../inc/distancia_edicao.hpp"
+#include "../inc/edit_distance.hpp"
 
 int main(int argc, char const *argv[])
 {
@@ -14,7 +14,7 @@ int main(int argc, char const *argv[])
       std::cin >> str1;
       std::cin >> str2;
 
-			std::cout << dinamica::distancia_edicao(str1, str2, str1.length(), str2.length()) << std::endl;
+			std::cout << dynamic::edit_distance(str1, str2, str1.length(), str2.length()) << std::endl;
 
   }
 

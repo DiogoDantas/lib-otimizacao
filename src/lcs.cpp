@@ -1,4 +1,4 @@
-#include "../inc/maior_subs_comum.hpp"
+#include "../inc/lcs.hpp"
 
 //max from two integers
 int max(int a, int b)
@@ -7,7 +7,7 @@ int max(int a, int b)
    }
 
 
-int dinamica::lcs( char *X, char *Y, int m, int n )
+int dynamic::lcs( char *X, char *Y, int m, int n )
    {
       int table[m+1][n+1];
       int i, j;
