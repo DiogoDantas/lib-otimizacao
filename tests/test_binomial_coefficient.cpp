@@ -6,7 +6,7 @@
 #include "../inc/binomial_coefficient.hpp"
 
 int main(int argc, char const *argv[]) {
-  int loop, n, k;
+  int loop = 0, n = 0, k = 0;
   std::cin >> loop;
   for (int i = 0; i < loop; i++) {
       std::cin >> n >> k;

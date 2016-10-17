@@ -6,7 +6,6 @@
 #define BOX_STACKING_HPP
 
 #include <algorithm> // std::begin, std::end, std::max_element, std::sort
-#include <functional> // std::greater
 #include <vector> // std::vector
 
 namespace dynamic {

@@ -6,7 +6,7 @@
 
 int dynamic::binomial_coeff(int n, int k){
 	// vetor com os coeficientes
-	std::vector<int> c{k+1, 0};
+	std::vector<int> c(k+1, 0);
 
 	// C0 inicia com 1 * Caso base *
 	c[0] = 1;

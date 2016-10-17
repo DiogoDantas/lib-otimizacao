@@ -36,8 +36,8 @@ def input_binomial_coefficient(f):
 	# gerando casos
 	for _ in range(TEST):
 		while True:
-			n = random.randint(1, 15)
-			k = random.randint(1, 15)
+			n = random.randint(1, 10)
+			k = random.randint(1, 10)
 			if n > k: break
 		f.write(str(n) + " " + str(k) + "\n")
 
@@ -82,12 +82,12 @@ def input_huffman(f):
 		characters = []
 		ch = random.choice(string.ascii_letters)
 		characters.append(ch)
-		f.write(ch+" ")
-		for _ in range(len_letters):
+		f.write(ch)
+		for _ in range(len_letters-1):
 			while True:
 				ch = random.choice(string.ascii_letters)
 				if not ch in characters: break
-			f.write(ch+" ")
+			f.write(ch)
 		freq = random.sample(range(1, 150), len_letters)
 		f.write("\n")
 		for q in freq: f.write(str(q)+" ")

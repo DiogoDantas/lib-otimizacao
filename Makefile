@@ -37,12 +37,12 @@ testD7:mkdir
 	./obj/test_coin_change.o < inputs/in_coin_change/001.in
 
 testD8:mkdir
-	$(CC) src/binomial_coefficient.cpp tests/binomial_coefficient.cpp $(FLAGS) -o obj/binomial_coefficient.o
-	./obj/binomial_coefficient.o < inputs/binomial_coefficient/001.in
+	$(CC) src/binomial_coefficient.cpp tests/test_binomial_coefficient.cpp $(FLAGS) -o obj/test_bino.o
+	./obj/test_bino.o < inputs/in_binomial_coefficient/001.in
 
 testD9:mkdir
-	$(CC) src/box_stacking.cpp tests/box_stacking.cpp $(FLAGS) -o obj/box_stacking.o
-	./obj/box_stacking.o < inputs/box_stacking/001.in
+	$(CC) src/box_stacking.cpp tests/test_box_stacking.cpp $(FLAGS) -o obj/test_box_stacking.o
+	./obj/test_box_stacking.o < inputs/in_box_stacking/001.in
 
 #TESTS FOR GREEDY ALGORITHMS PROBLEMS#
 

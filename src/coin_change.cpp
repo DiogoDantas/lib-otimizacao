@@ -9,7 +9,7 @@ int dynamic::coin_change(const std::vector<int>& s, int n){
 	int len = s.size();
 
 	// vetor iniciando 0 até o troco máximo
-	std::vector<int> table{n+1, 0};
+	std::vector<int> table(n+1, 0);
 	
 	// caso base
 	table[0] = 1;
