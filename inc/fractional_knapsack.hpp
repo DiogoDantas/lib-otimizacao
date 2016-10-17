@@ -1,8 +1,8 @@
-#ifndef MOCHILA_FRA_H_
-#define  MOCHILA_FRA_H_
+#ifndef FRACTIONAL_KNAPSACK
+#define  FRACTIONAL_KNAPSACK
 #include <vector>
 
-namespace gulosos {
+namespace greedy {
     struct Item {
         int value_, weight_;
 
@@ -13,6 +13,6 @@ namespace gulosos {
         }
     };
 
-    double mochila_fracionaria(int W, std::vector<Item> arr, int n);
+    double fractional_knapsack(int W, std::vector<Item> arr, int n);
 }
 #endif

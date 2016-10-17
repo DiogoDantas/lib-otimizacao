@@ -1,16 +1,14 @@
-#include "../inc/mochila_fracionaria.hpp"
+#include "../inc/fractional_knapsack.hpp"
 #include <algorithm>
 
-
-
 // Funcao de comparacao customizada
-bool cmp(gulosos::Item a, gulosos::Item b) {
+bool cmp(greedy::Item a, greedy::Item b) {
     double r1 = (double)a.value_ / a.weight_;
     double r2 = (double)b.value_ / b.weight_;
     return r1 > r2;
 }
 
-double gulosos::mochila_fracionaria(int W, std::vector<Item> arr, int n) {
+double greedy::fractional_knapsack(int W, std::vector<Item> arr, int n) {
 
     std::sort(arr.begin(), arr.end(), cmp);
 

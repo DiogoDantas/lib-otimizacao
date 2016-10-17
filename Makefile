@@ -1,6 +1,8 @@
 mkdir:
 	mkdir obj
 
+#TESTS FOR DYNAMIC PROBLEMS#
+
 testD1: mkdir
 	g++ src/subset_sum.cpp tests/test_subset_sum.cpp -std=c++11 -O2 -o obj/test_ssp.o
 	./obj/test_ssp.o < inputs/in_subset_sum/001.in
@@ -37,6 +39,20 @@ testD9:mkdir
 	g++ src/box_stacking.cpp tests/box_stacking.cpp -std=c++11 -O2 -o obj/box_stacking.o
 	./obj/box_stacking.o < inputs/box_stacking/001.in
 
+#TESTS FOR GREEDY ALGORITHMS PROBLEMS#
+
+testG1: mkdir
+	g++ src/dijkstra.cpp tests/test_dijkstra.cpp -std=c++11 -O2 -o obj/test_dijkstra.o
+	./obj/test_dijkstra.o < inputs/in_dijkstra/input_dijkstra.in
+
+testG2: mkdir
+	g++ src/prim.cpp tests/test_prim.cpp -std=c++11 -O2 -o obj/test_prim.o
+	./obj/test_prim.o < inputs/in_prim/input_prim.in
+
+testG3: mkdir
+	g++ src/fractional_knapsack.cpp tests/test_fractional_knapsack.cpp -std=c++11 -O2 -o obj/test_fractional_knapsack.o
+	./obj/test_fractional_knapsack.o < inputs/input_fractional_knapsack.in
+
 testG4: mkdir
 	g++ src/graph_coloring.cpp tests/test_graph_coloring.cpp -std=c++11 -O2 -o obj/test_color_graf.o
 	./obj/test_color_graf.o < inputs/input_graph_coloring.in
@@ -44,11 +60,9 @@ testG4: mkdir
 all: dynamic greedy
 #	mkdir obj
 
-#	g++ src/*.cpp tests/test_mochila_fracionaria.cpp -std=c++11 -O2 -o obj/test_mochila_frac.o
 #	g++ src/*.cpp tests/test_dijkstra.cpp -std=c++11 -O2 -o obj/test_dijkstra.o
 #	g++ src/*.cpp tests/test_prim.cpp -std=c++11 -O2 -o obj/test_prim.o
 
-#	./obj/test_mochila_frac.o < inputs/input_mochila_fracionaria.in
 #	./obj/test_dijkstra.o < inputs/in_dijkstra/input_dijkstra.in
 #	./obj/test_prim.o < inputs/input_prim.in
 

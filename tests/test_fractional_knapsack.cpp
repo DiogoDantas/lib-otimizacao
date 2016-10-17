@@ -1,5 +1,5 @@
 #include <iostream>
-#include "../inc/mochila_fracionaria.hpp"
+#include "../inc/fractional_knapsack.hpp"
 
 int main(int argc, char const *argv[]) {
 
@@ -10,17 +10,17 @@ int main(int argc, char const *argv[]) {
 		std::cin >> totalWeight;
 		std::cin >> nElements;
 
-		std::vector<gulosos::Item> arr;
+		std::vector<greedy::Item> arr;
 
 		for (int i = 0; i < nElements; i++) {
 			int value, weight;
 			std::cin >> value;
 			std::cin >> weight;
-			gulosos::Item item {value, weight};
+			greedy::Item item {value, weight};
 			arr.push_back(item);
 		}
 
-		std::cout << gulosos::mochila_fracionaria(totalWeight, arr, nElements) << std::endl;
+		std::cout << greedy::fractional_knapsack(totalWeight, arr, nElements) << std::endl;
 
 
 	}
