@@ -56,6 +56,7 @@ A solução implementada [aqui](https://github.com/anjoshigor/lib-otimizacao/blo
   Dada duas strings A e B e as operações de adição, remoção e substituição que podem ser realizadas sobre a string A. Encontrar o número mínimo de operações necessárias para converter A em B.
   
   **Exemplo**
+  
   Dadas as strings A = *"github"* e B = *"git"*
 
   A distância de edição é **3**, pois podemos remover o *"hub"* de A.
