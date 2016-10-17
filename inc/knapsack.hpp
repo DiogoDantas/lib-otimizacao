@@ -3,15 +3,15 @@
  * date     14-10-2016
  */
 
-#ifndef MOCHILA_BINARIA_HPP
-#define MOCHILA_BINARIA_HPP
+#ifndef KNAPSACK_HPP
+#define KNAPSACK_HPP
 
 #include <vector>
 
- namespace dinamica {
+ namespace dynamic {
 
  	/**
- 	 * @brief      { Função que calcula o valor máximo que é possivel colocar na mochila 
+ 	 * @brief      { Função que calcula o valor máximo que é possivel colocar na mochila
  	 *             	 de capacidade weight}
  	 *
  	 * @param[in]  weight         Capacidade da mochila
@@ -20,8 +20,8 @@
  	 * @param[in]  num_itens      Número de itens
  	 *
  	 */
- 	int mochila_binaria(const int weight, std::vector<int> & weight_vector, std::vector<int> & values_vector, const int num_itens);
+ 	int knapsack(const int weight, std::vector<int> & weight_vector, std::vector<int> & values_vector, const int num_itens);
 
- } 
+ }
 
-#endif // MOCHILA_BINARIA_HPP
+#endif // KNAPSACK_HPP

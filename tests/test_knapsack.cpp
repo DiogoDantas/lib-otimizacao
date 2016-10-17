@@ -1,4 +1,4 @@
-#include "../inc/mochila_binaria.hpp"
+#include "../inc/knapsack.hpp"
 #include <iostream>
 
 int main(int argc, char const *argv[])
@@ -30,11 +30,11 @@ int main(int argc, char const *argv[])
 	    	values.push_back(tmp);
 	    }
 
-	    std::cout << dinamica::mochila_binaria(weight, weights, values, num_elements) << std::endl;
+	    std::cout << dynamic::knapsack(weight, weights, values, num_elements) << std::endl;
 
 	    T--;
 	}
 
-	
+
 	return 0;
 }

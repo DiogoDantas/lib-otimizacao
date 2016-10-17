@@ -3,15 +3,15 @@
  * @date       14-10-2016
  */
 
-#include "../inc/mochila_binaria.hpp"
-#include <algorithm> 
+#include "../inc/knapsack.hpp"
+#include <algorithm>
 
-int dinamica::mochila_binaria(const int weight, std::vector<int> & weight_vector, std::vector<int> & values_vector, const int num_itens)
+int dynamic::knapsack(const int weight, std::vector<int> & weight_vector, std::vector<int> & values_vector, const int num_itens)
 {
    int i, w;
    int K[num_itens+1][weight+1];
- 
-   // Construindo a tabela de maneira bottom up 
+
+   // Construindo a tabela de maneira bottom up
    for (i = 0; i <= num_itens; i++)
    {
        for (w = 0; w <= weight; w++)
@@ -24,6 +24,6 @@ int dinamica::mochila_binaria(const int weight, std::vector<int> & weight_vector
                  K[i][w] = K[i-1][w];
        }
    }
- 
+
    return K[num_itens][weight];
 }

@@ -6,12 +6,12 @@ testD1: mkdir
 	./obj/test_ssp.o < inputs/in_subset_sum/001.in
 
 testD2: mkdir
-	g++ src/*.cpp tests/test_mochila_binaria.cpp -std=c++11 -O2 -o obj/test_mhbin.o
-	./obj/test_mhbin.o < inputs/in_mochila_binaria/001.in
+	g++ src/knapsack.cpp tests/test_knapsack.cpp -std=c++11 -O2 -o obj/test_knapsack.o
+	./obj/test_knapsack.o < inputs/in_knapsack/001.in
 
 testD3: mkdir
-	g++ src/*.cpp tests/test_quebra_palavras.cpp -std=c++11 -O2 -o obj/test_quebra_palavras.o
-	./obj/test_quebra_palavras.o < inputs/in_quebra_palavras/input_quebra_palavras.in
+	g++ src/word_break.cpp tests/test_word_break.cpp -std=c++11 -O2 -o obj/test_word_break.o
+	./obj/test_word_break.o < inputs/in_word_break/input_word_break.in
 
 testD4: mkdir
 	g++ src/lcs.cpp tests/test_lcs.cpp -std=c++11 -O2 -o obj/test_lcs.o
