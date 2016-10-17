@@ -11,9 +11,9 @@ namespace greedy{
 	 * @brief      { Função que encontra o vertex com a menor chave no conjunto de vertices
 	 *             	 que ainda não estão na MST}
 	 *
-	 * @param[in]  parent        Vetor que representa a MST
-	 * @param[in]  num_vertices  Número de vertices
-	 * @param      graph         Grafo
+	 * @param[in]  key           Vetor que armazena o pesos dos vertices
+	 * @param[in]  mst_set  	 Conjunto dos vertices que não estão na MST
+	 * @param[in]  num_vertices  Número de vertices        
 	 *
 	 * @tparam     BDArray       { Vetor bidimensional que representa o grafo}
 	 */
@@ -53,7 +53,7 @@ namespace greedy{
 		std::vector<bool> mst_set(num_vertices); //Conjunto que armazena os vertices que ainda não estão na MST
 
 		/**
-		 * Inicializando o vetor keys com INF e marcando que os vertice como não inclusos na MST
+		 * Inicializando o vetor keys com INF e marcando os vertice como não inclusos na MST
 		 */
 		for (int i = 0; i < num_vertices; ++i){
 			key[i] = std::numeric_limits<int>::max();
