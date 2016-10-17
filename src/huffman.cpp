@@ -2,7 +2,6 @@
  * @author     Marcos Alves
  * @date       15-10-2016
  */
-
 #include "../inc/huffman.hpp" // greedy::code_puts,  greedy::huff_encode
 
 void greedy::code_puts(greedy::node_t* root, std::string code){
@@ -20,7 +19,7 @@ void greedy::code_puts(greedy::node_t* root, std::string code){
 	code_puts(root->right, code + "1");
 }
 
-greedy::node_t* greedy::huff_encode(const std::vector<char>& ch, const std::vector<unsigned>& freq){
+greedy::node_t* greedy::huff_encode(const std::vector<char>& ch, const std::vector<int>& freq){
 	// quantidade de caracters
 	int len = ch.size();
 	// ponteiros auxiliares

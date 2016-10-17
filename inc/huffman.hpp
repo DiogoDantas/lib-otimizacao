@@ -21,13 +21,13 @@ namespace greedy {
 		// apontadores para o filho
 		node_t *left, *right; 
 		// construtor 1
-		node_t(char c, unsigned f) {
+		node_t(char c, int f) {
 			content = c;
 			frequency = f;
 			left = right = nullptr;
 		}
 		// construtor 2
-		node_t(char c, unsigned f, node_t* l, node_t* r) {
+		node_t(char c, int f, node_t* l, node_t* r) {
 			content = c;
 			frequency = f;
 			left = l;
@@ -49,7 +49,7 @@ namespace greedy {
 	 *
 	 * @return     Retorna a raíz da árvore de huffman.
 	 */
-	node_t* huff_encode(const std::vector<char>& ch, const std::vector<unsigned>& freq);
+	node_t* huff_encode(const std::vector<char>& ch, const std::vector<int>& freq);
 }
 
 #endif //HUFFMAN_HPP

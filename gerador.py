@@ -4,80 +4,141 @@
 #++
 #
 import random
+import string
 # quantidade de entrada
-ENTRADA = 5
+INPUT = 5
 # quantidade de casos para cada algoritmo
-TESTE = 30
+TEST = 30
 # caminhos referente a entrada
-PATH = ["inputs/in_triangulo_pascal/", "inputs/in_troco_moedas/", "inputs/in_soma_subconjunto/", "inputs/in_mochila_binaria/"]
+PATH = ["inputs/in_binomial_coefficient/", "inputs/in_coin_change/",
+        "inputs/in_subset_sum/", "inputs/in_knapsack/", "inputs/in_activity_selection/",
+        "inputs/in_huffman/", "inputs/in_box_stacking/"]
 
-def gerar():
+def generate():
 	index = 0
-	opcoes = {0: input_triangulo_pascal,
-			  1: input_troco_moedas,
-			  2: input_soma_subconjuntos,
-			  3: input_mochila_binaria}
+	option = {0: input_binomial_coefficient,
+			  1: input_coin_change,
+			  2: input_subset_sum,
+			  3: input_knapsack,
+			  4: input_activity_selection,
+			  5: input_huffman,
+			  6: input_box_stacking}
 	for p in PATH:
-		for i in range(ENTRADA):
-			arquivo = open(p + "00" + str(i+1) + ".in", 'w')
-			arquivo.write(str(TESTE)+"\n")	
-			opcoes[index](arquivo)
+		for i in range(INPUT):
+			file = open(p + "00" + str(i+1) + ".in", 'w')
+			file.write(str(TEST)+"\n")	
+			option[index](file)
 		index+=1
-		arquivo.close()
+		file.close()
 
-# metodos para gerar inputs
-def input_triangulo_pascal(a):
+# @alvesmarcos
+def input_binomial_coefficient(f):
 	# gerando casos
-	for _ in range(TESTE):
+	for _ in range(TEST):
 		while True:
 			n = random.randint(1, 15)
 			k = random.randint(1, 15)
 			if n > k: break
-		a.write(str(n) + " " + str(k) + "\n")
+		f.write(str(n) + " " + str(k) + "\n")
 
-def input_troco_moedas(a):
+# @alvesmarcos
+def input_coin_change(f):
 	# gerando casos
-	for _ in range(TESTE):
-		len_trocos = random.randint(3, 10)
-		a.write(str(len_trocos)+"\n")
+	for _ in range(TEST):
+		len_change = random.randint(3, 10)
+		f.write(str(len_change)+"\n")
 		# valores aleatórios 1 a 30
-		valores = random.sample(range(1, 30), len_trocos)
-		valores.sort()
-		for v in valores: a.write(str(v)+" ")
-		a.write("\n"+str(random.randint(15, 100))+"\n")
+		values = random.sample(range(1, 30), len_change)
+		values.sort()
+		for v in values: f.write(str(v)+" ")
+		f.write("\n"+str(random.randint(15, 100))+"\n")
 
-def input_soma_subconjuntos(a):
+# @alvesmarcos
+def input_activity_selection(f):
+	# gerando casos
+	for _ in range(TEST):
+		len_activity = random.randint(5, 15)
+		f.write(str(len_activity)+"\n")	
+		start = random.sample(range(1, 30), len_activity)
+		start.sort()
+		list_end = []
+		# lista com tempos inicias
+		for s in start:
+			while True: 
+				end = random.randint(1, 30)
+				if end > s: break
+			f.write(str(s)+" ")
+			list_end.append(end) 
+		f.write("\n")
+		for e in list_end: f.write(str(e)+" ")
+		f.write("\n")
+
+# @alvesmarcos
+def input_huffman(f):
+	# gerando casos
+	for _ in range(TEST):
+		len_letters = random.randint(5, 30)
+		f.write(str(len_letters)+"\n")	
+		characters = []
+		ch = random.choice(string.ascii_letters)
+		characters.append(ch)
+		f.write(ch+" ")
+		for _ in range(len_letters):
+			while True:
+				ch = random.choice(string.ascii_letters)
+				if not ch in characters: break
+			f.write(ch+" ")
+		freq = random.sample(range(1, 150), len_letters)
+		f.write("\n")
+		for q in freq: f.write(str(q)+" ")
+		f.write("\n")
+
+# @alvesmarcos
+def input_box_stacking(f):
+	# gerando casos
+	for _ in range(TEST):
+		len_box = random.randint(3, 10)
+		f.write(str(len_box)+"\n")	
+		for _ in range(len_box):
+			box = random.sample(range(1, 30), 3)
+			for b in box:
+				f.write(str(b)+" ")
+			f.write("\n")
+
+# @DiogoDantas
+def input_subset_sum(f):
 	#gerando casos
-	for _ in range(TESTE):
+	for _ in range(TEST):
 		set_num_elements = random.randint(1,10)
-		a.write(str(set_num_elements) + "\n")
+		f.write(str(set_num_elements) + "\n")
 		#valores aleatórios de 1 a 100
 		elements = random.sample(range(1, 1000), set_num_elements)
 
 		for x in elements:
-			a.write(str(x) + " ")
+			f.write(str(x) + " ")
 
-		a.write("\n" + str(random.randint(1,1000)) + "\n")
+		f.write("\n" + str(random.randint(1,1000)) + "\n")
 
-def input_mochila_binaria(a):
+# @DiogoDantas
+def input_knapsack(f):
 	#gerando casos
-	for _ in range(TESTE):
+	for _ in range(TEST):
 		num_elements = random.randint(1,10)
-		a.write(str(num_elements) + "\n")
+		f.write(str(num_elements) + "\n")
 		W = random.randint(1,100)
-		a.write(str(W) + "\n")
+		f.write(str(W) + "\n")
 		weights = random.sample(range(1,100), num_elements)
 		values = random.sample(range(1,1000), num_elements)
 
 		for x in weights:
-			a.write(str(x) + " ")
+			f.write(str(x) + " ")
 
-		a.write("\n")
+		f.write("\n")
 
 		for x in values:
-			a.write(str(x) + " ")
+			f.write(str(x) + " ")
 
-		a.write("\n")
+		f.write("\n")
 
 # call
-gerar()
+generate()
