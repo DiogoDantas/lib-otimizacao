@@ -24,7 +24,7 @@ Tamanho da Maior Subsequência Comum entre  *"AGGTAB"* e *"GXTXAYB"* é **4**. `
 
   **Complexidade**
 
-A solução implementada [aqui](https://github.com/anjoshigor/lib-otimizacao/blob/master/src/maior_subs_comum.cpp) possui complexidade *O(mn)* onde *m* é o tamanho da primeira string e *n* da segunda.
+A solução implementada [aqui](https://github.com/anjoshigor/lib-otimizacao/blob/master/src/lcs.cpp) possui complexidade *O(mn)* onde *m* é o tamanho da primeira string e *n* da segunda.
 
 
 5) Multiplicação de Matrizes
@@ -46,12 +46,24 @@ A solução implementada [aqui](https://github.com/anjoshigor/lib-otimizacao/blo
   
   **Complexidade**
   
-A solução implementada [aqui](https://github.com/anjoshigor/lib-otimizacao/blob/master/src/multiplicacao_matrizes.cpp) possui complexidade cúbica *O(n³)* de tempo e quadrática *O(n²)* de espaço.
+A solução implementada [aqui](https://github.com/anjoshigor/lib-otimizacao/blob/master/src/matrix_chain_mult.cpp) possui complexidade cúbica *O(n³)* de tempo e quadrática *O(n²)* de espaço.
   
   
 6) Distância de edição
 ------
+
+  **Descrição**
+  Dada duas strings A e B e as operações de adição, remoção e substituição que podem ser realizadas sobre a string A. Encontrar o número mínimo de operações necessárias para converter A em B.
   
+  **Exemplo**
+  Dadas as strings A = *"github"* e B = *"git"*
+
+  A distância de edição é **3**, pois podemos remover o *"hub"* de A.
+  
+  **Complexidade**
+  
+  A solução implementada [aqui](https://github.com/anjoshigor/lib-otimizacao/blob/master/src/edit_distance.cpp) possui complexidade *O(mn)* de tempo e espaço. Onde m e n são os tamanhos das duas strings.
+
 7) Troco em moedas
 ------
 
