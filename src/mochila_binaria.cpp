@@ -11,7 +11,7 @@ int dinamica::mochila_binaria(const int weight, std::vector<int> & weight_vector
    int i, w;
    int K[num_itens+1][weight+1];
  
-   // Build table K[][] in bottom up manner
+   // Construindo a tabela de maneira bottom up 
    for (i = 0; i <= num_itens; i++)
    {
        for (w = 0; w <= weight; w++)
