@@ -14,7 +14,7 @@
 
   **Complexidade**
 
-  A solução implementada [aqui](https://github.com/anjoshigor/lib-otimizacao/blob/master/src/subset_sum.cpp) possui complexidade *O(sum*n)*
+  A solução implementada [aqui](https://github.com/anjoshigor/lib-otimizacao/blob/master/src/subset_sum.cpp) possui complexidade _O(sum * N)_
 
 2) Mochila Binária
 ------
@@ -30,7 +30,7 @@
   
   Dado a seguinte lista de valores dos itens *{60, 100, 120}* e lista de pesos *{60, 100, 120}* e considerando que sua mochila 
   só consegue carregar um peso *W = 50* o maior lucro seria 220
-  
+
   **Complexidade**
 
   A solução implementada [aqui](https://github.com/anjoshigor/lib-otimizacao/blob/master/src/knapsack.cpp) possui complexidade *O(nW)* onde *n* é o número de itens e *W* é a capacidade da mochila
@@ -45,16 +45,18 @@
 
   **Exemplo**
 
-  Considerando o seguinte dicionário  
+  >Considerando o seguinte dicionário  
   *{ i, like, sam, sung, samsung, mobile, ice, cream, icecream, man, go, mango }*
 
-  Entrada:  ilike
-  Saída: Yes 
-  A string pode ser dividida como "i like".
+  >Entrada:  ilike
+  >
+  >Saída: Yes 
+  >
+  >A string pode ser dividida como "i like".
 
   **Complexidade**
 
-  A solução implementada [aqui](https://github.com/anjoshigor/lib-otimizacao/blob/master/src/word_break.cpp) possui complexidade *O(n³)* devido a função que retorna uma substring sozinha possuir uma complexidade *O(n)*
+  A solução implementada [aqui](https://github.com/anjoshigor/lib-otimizacao/blob/master/src/word_break.cpp) possui complexidade *O(n³)*  devido a função que retorna uma substring sozinha possuir uma complexidade *O(n)*
 
 4) Maior Subsequência Comum
 ------
