@@ -3,11 +3,58 @@
 1) Soma de Subconjuntos
 ------
 
+  **Descrição**
+
+  Dado um conjunto composto por números inteiros, não negativos, e um valor soma. A função deve verificar a existencia de algum subconjunto em que a soma dos elementos seja igual ao valor soma recebido.
+
+  **Exemplo**
+  
+  Dado o seguinte conjunto {3, 34, 4, 12, 5, 2} e o valor de soma {9} existe o subconjunto {5, 4} que a soma dos seus elementos
+  5 + 4 é igual ao valor de soma {9} 
+
+  **Complexidade**
+
+  A solução implementada [aqui](https://github.com/anjoshigor/lib-otimizacao/blob/master/src/subset_sum.cpp) possui complexidade *O(sum*n)*
+
 2) Mochila Binária
 ------
 
+  **Descrição**
+
+  Esse é um problema muito conhecido de programação dinâmica. Considere a seguinte analogia, você é um ladrão que invadiu uma
+  casa e dentro dela existem *n* itens e cada um desses itens possui um peso *w*. Seu problema é que a mochila que você levou 
+  para armazenar os itens só consegue carregar um certo peso *W* e seu objetivo é selecionar os itens que irão garantir o maior
+  lucro possivel, levando em consiração que o itens não podem ser quebrados, ou você vai levá-los, ou não. 
+
+  **Exemplo**
+  
+  Dado a seguinte lista de valores dos itens *{60, 100, 120}* e lista de pesos *{60, 100, 120}* e considerando que sua mochila 
+  só consegue carregar um peso *W = 50* o maior lucro seria 220
+  
+  **Complexidade**
+
+  A solução implementada [aqui](https://github.com/anjoshigor/lib-otimizacao/blob/master/src/knapsack.cpp) possui complexidade *O(nW)* onde *n* é o número de itens e *W* é a capacidade da mochila
+
 3) Quebra de Palavras
 ------
+
+  **Descrição**
+
+  Dado um string de entrada e um dicionário de palavras. Esse problema tenta decidir se a string de entrada pode ser dividida
+  em um sequência de palavras do dicionário.
+
+  **Exemplo**
+
+  Considerando o seguinte dicionário  
+  *{ i, like, sam, sung, samsung, mobile, ice, cream, icecream, man, go, mango }*
+
+  Entrada:  ilike
+  Saída: Yes 
+  A string pode ser dividida como "i like".
+
+  **Complexidade**
+
+  A solução implementada [aqui](https://github.com/anjoshigor/lib-otimizacao/blob/master/src/word_break.cpp) possui complexidade *O(n³)* devido a função que retorna uma substring sozinha possuir uma complexidade *O(n)*
 
 4) Maior Subsequência Comum
 ------
