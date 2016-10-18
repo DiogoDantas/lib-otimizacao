@@ -60,7 +60,6 @@ def input_activity_selection(f):
 		len_activity = random.randint(5, 15)
 		f.write(str(len_activity)+"\n")	
 		start = random.sample(range(1, 30), len_activity)
-		start.sort()
 		list_end = []
 		# lista com tempos inicias
 		for s in start:
@@ -70,6 +69,7 @@ def input_activity_selection(f):
 			f.write(str(s)+" ")
 			list_end.append(end) 
 		f.write("\n")
+		list_end.sort()
 		for e in list_end: f.write(str(e)+" ")
 		f.write("\n")
 
