@@ -45,7 +45,7 @@
 
   **Exemplo**
 
-  >Considerando o seguinte dicionário  
+  >Considerando o seguinte dicionário:  
   *{ i, like, sam, sung, samsung, mobile, ice, cream, icecream, man, go, mango }*
 
   >Entrada:  ilike
