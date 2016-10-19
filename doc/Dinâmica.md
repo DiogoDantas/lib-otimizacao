@@ -28,15 +28,15 @@
 
   **Exemplo**
   
-  | Item  | Valor | Peso  |
-  | ----- |:-----:| -----:|
-  | A     | 60    | 10    |
-  | B     | 100   | 20    |
-  | C     | 120   | 30    |
+| Item  | Valor | Peso  |
+| ----- |:-----:| -----:|
+| A     | 60    | 10    |
+| B     | 100   | 20    |
+| C     | 120   | 30    |
 
-  **Capacidade = 50**
+**Capacidade = 50**
 
-  `O valor máximo obtido é 220, pegando o item B e o item C
+`O valor máximo obtido é 220, pegando o item B e o item C
 
   **Complexidade**
 
