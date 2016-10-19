@@ -16,13 +16,13 @@
 
   Considerando o nó *0* como nó inicial, o grafo resultante após o processamento do algoritmo de Dijkstra seria o esse:
 
-  ![Graph Dijkstra](http://d1gjlxt8vb0knt.cloudfront.net//wp-content/uploads/Fig-11.jpg)
+  ![Graph Dijkstra](http://d1gjlxt8vb0knt.cloudfront.net//wp-content/uploads/DIJ5.jpg)
 
   Percebam o grafo resultante possui os caminhos com menor custo partindo do nó *0* para todos os outros nós
   
   **Complexidade**
 
-  O algoritmo de Dijkstra possui complexidade _O(|E| + |V| * |log V|) onde |E| é número de arestas e |V| o número de vertices
+  O algoritmo de Dijkstra possui complexidade _O(|E| + |V| * |log V|) onde |E| é número de arestas e |V| o número de vértices
 
 
 
