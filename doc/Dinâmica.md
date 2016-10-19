@@ -28,8 +28,15 @@
 
   **Exemplo**
   
-  Dado a seguinte lista de valores dos itens *{60, 100, 120}* e lista de pesos *{60, 100, 120}* e considerando que sua mochila 
-  só consegue carregar um peso *W = 50* o maior lucro seria 220
+  | Item  | Valor | Peso  |
+  | ----- |:-----:| -----:|
+  | A     | 60    | 10    |
+  | B     | 100   | 20    |
+  | C     | 120   | 30    |
+
+  **Capacidade = 50**
+
+  `O valor máximo obtido é 220, pegando o item B e o item C
 
   **Complexidade**
 
