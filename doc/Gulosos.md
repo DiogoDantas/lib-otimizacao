@@ -31,9 +31,21 @@
 
   **Descrição**
 
+  Dado um grafo conexo e unidirecional, uma árvore geradora desse grafo é um subgrafo que é uma árvore e conecta todos os vértices juntos. Um único grafo pode ter muitas árvores. Uma _minimum spanning tree_ (MST) ou árvore geradora de peso mínimo para um grafo ponderado, conectado e não direcionada é uma árvore geradora com peso igual ou inferior ao peso de qualquer outra árvore de expansão. O algoritmo de Prim é utilizado para gerar a MST.
+
   **Exemplo**
 
+  Considere o seguinte grafo:
+
+  ![Graph](http://d1gjlxt8vb0knt.cloudfront.net//wp-content/uploads/Fig-11.jpg)
+
+  O subgrafo gerado após o processamento do algoritmo de Prim seria o esse:
+
+  ![Graph Dijkstra](http://d1gjlxt8vb0knt.cloudfront.net//wp-content/uploads/MST5.jpg)
+
   **Complexidade** 
+
+  A complexidade do algoritmo de Prim quando o grafo é representado usando uma matriz de adjacência é *O(V²) 
 
 3) Mochila Fracionária
 ------
