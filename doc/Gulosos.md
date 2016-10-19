@@ -98,7 +98,49 @@ vértices e E o número de arestas do grafo.
 
 5) Compressão de Dados (Huffman)
 ------
+
+  **Descrição**
+  
+ Huffman é um algoritmo de compressão de dados sem perdas. A ideia é a de atribuir códigos de comprimento variável de caracteres de entrada, comprimentos dos códigos atribuídos são com base nas frequências de caracteres correspondentes. O caractere mais frequente recebe o menor código e o caractere menos frequente recebe o maior código.
+  
+  **Exemplo**
+
+Para ilustrar o funcionamento do método, vamos comprimir a sequência de caracteres `AAAAAABBBBBCCCCDDDEEF`. Para usar o código Huffman e comprimir esta sequência precisamos primeiro montar uma árvore de Huffman.
+
+| Caractere  |  A  |  B  |  C  |  D  |  E  |  F  |
+|:----------:|:---:|:---:|:---:|:---:|:---:|:---:|
+| Frequência |  6  |  5  |  4  |  3  |  2  |  1  |
+
+Gerando nossa árvore de Huffman temos:
+
+![Biynary Tree](https://upload.wikimedia.org/wikipedia/commons/2/20/Huffmanpasso6.png)
+
+  **Complexidade**
+
+A solução implementada [aqui](https://github.com/anjoshigor/lib-otimizacao/blob/master/src/huffman.cpp) possui complexidade de tempo *O(nlogn)* em que *n* é o número de caracteres únicos.
   
 6) Seleção de Atividades
 ------
 
+ **Descrição**
+
+Dado N atividades com o seu início e término de tempo. Devemos selecionar o número máximo de atividades que podem ser executadas por uma única pessoa, assumindo que uma pessoa só pode funcionar com uma única atividade de cada vez.
+
+ **Exemplo**
+ 
+ Considere 6 atividades descritas abaixo:
+ 
+| Atividades |  Ínicio  |    Fim   |
+|:-------:|:--------:|:--------:|
+| 0 | 1 | 2 |
+| 1 | 3 | 4 |
+| 2 | 0 | 6 |
+| 3 | 5 | 7 |
+| 4 | 8 | 9 |
+| 5 | 5 | 9 |
+
+O conjunto máximo de atividades que podem ser executadas por uma única pessoa é {0, 1, 3, 4}.
+
+ **Complexidade**
+
+A solução implementada [aqui](https://github.com/anjoshigor/lib-otimizacao/blob/master/src/activity_selection.cpp) possui complexidade de tempo *O(n)* em que *n* é o número de atividades.
