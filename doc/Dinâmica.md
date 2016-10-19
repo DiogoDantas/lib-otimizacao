@@ -36,7 +36,7 @@
 
 **Capacidade = 50**
 
-`O valor máximo obtido é 220, pegando o item B e o item C
+`O valor máximo obtido é 220, pegando o item B e o item C`
 
   **Complexidade**
 
@@ -163,10 +163,43 @@ A solução implementada [aqui](https://github.com/anjoshigor/lib-otimizacao/blo
  **Descrição**
  
  Suponha que sejam dadas **N** caixas. Cada caixa tem uma altura h, uma largura w e uma profundidade d. Deseja-se saber qual é a altura máxima formada pelo empilhamento de caixas, de forma que só é permitido empilhar uma caixa sobre outra, se as dimensões da base da caixa inferior forem estritamente maiores do que as respectivas dimensões da base da caixa superior.  Lembrando que você pode rotacionar uma caixa para que qualquer uma de suas faces faça o papel da base.
-  
+  [Box Stacking](http://algorithms.tutorialhorizon.com/files/2016/04/Box-Stacking-Rotations.png)
+ 
   **Exemplo**
+  
+  Dado um conjunto de caixas `B = { {4, 6, 7}, {1, 2, 3}, {4, 5, 6}, {10, 12, 32} }`
+  
+  Rotações produzidas:
+
+    10 x 12 x 32
+  
+    12 x 10 x 32
+  
+    32 x 10 x 12
+   
+    4 x 6 x 7
+   
+    4 x 5 x 6
+   
+    6 x 4 x 7
+   
+    5 x 4 x 6
+   
+    7 x 4 x 6
+   
+    6 x 4 x 5
+   
+    1 x 2 x 3
+   
+    2 x 1 x 3
+   
+    3 x 1 x 2 
+
+`A altura máxima é 60`
+
+Obtido pelas caixas {{**3**, 1, 2}, {**1**, 2, 3}, {**6**, 4, 5}, {**4**, 5, 6}, {**4**, 6, 7}, {**32** , 10, 12}, {**10**, 12, 32}}
   
     
   **Complexidade**
   
-A solução implementada [aqui](https://github.com/anjoshigor/lib-otimizacao/blob/master/src/box_staking.cpp) possui complexidade quadrática *O(n²)* de tempo e linear *O(n²)* de espaço.
+A solução implementada [aqui](https://github.com/anjoshigor/lib-otimizacao/blob/master/src/box_stacking.cpp) possui complexidade quadrática *O(n²)* de tempo e linear *O(n)* de espaço.
