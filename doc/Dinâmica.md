@@ -163,7 +163,7 @@ A solução implementada [aqui](https://github.com/anjoshigor/lib-otimizacao/blo
  **Descrição**
  
  Suponha que sejam dadas **N** caixas. Cada caixa tem uma altura h, uma largura w e uma profundidade d. Deseja-se saber qual é a altura máxima formada pelo empilhamento de caixas, de forma que só é permitido empilhar uma caixa sobre outra, se as dimensões da base da caixa inferior forem estritamente maiores do que as respectivas dimensões da base da caixa superior.  Lembrando que você pode rotacionar uma caixa para que qualquer uma de suas faces faça o papel da base.
-  [Box Stacking](http://algorithms.tutorialhorizon.com/files/2016/04/Box-Stacking-Rotations.png)
+![Box Stacking](http://algorithms.tutorialhorizon.com/files/2016/04/Box-Stacking-Rotations.png)
  
   **Exemplo**
   
