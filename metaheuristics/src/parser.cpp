@@ -18,6 +18,32 @@ double CVRP::Parser::calc_distance(CVRP::Node node1, CVRP::Node node2)
   return sqrt(a * a + b * b);
 }
 
+void  CVRP::Parser::print_nodes(Instance problem_instance)
+{
+  int i =0;
+  for (auto &node : problem_instance.nodes)
+  {
+    std::cout << "Node: " << i << std::endl;
+    std::cout << "Postion: " << node.x <<", "<< node.y << std::endl;
+    std::cout << "Demand: " << node.demand << std::endl;
+    i++;
+  }
+}
+
+void  CVRP::Parser::print_matrix(Instance problem_instance)
+{
+  for (auto &row : problem_instance.distance_matrix)
+  {
+    for (auto cell : row)
+    {
+      std::cout << cell <<" ";
+    }
+
+    std::cout << std::endl;
+  }
+
+}
+
 CVRP::Instance CVRP::Parser::build_problem()
   {
 
@@ -52,7 +78,14 @@ CVRP::Instance CVRP::Parser::build_problem()
 
 
     std::clog << "LOG:  Getting the nodes.." << std::endl;
-    for (int i = 0; i < problem_instance.number_of_nodes; i++) {
+    Node deposit;
+    deposit.x = 1;
+    deposit.y = -1;
+    deposit.demand = 0;
+
+    problem_instance.nodes.push_back(deposit);
+
+    for (int i = 1; i <= problem_instance.number_of_nodes; i++) {
       Node node;
       std::cin >> word; //index
       std::cin >> node.x;
@@ -63,7 +96,7 @@ CVRP::Instance CVRP::Parser::build_problem()
     std::cin >> word; //Demand title
 
     std::clog << "LOG:  Getting the demand of each node.." << std::endl;
-    for (int i = 0; i < problem_instance.number_of_nodes; i++) {
+    for (int i = 1; i <= problem_instance.number_of_nodes; i++) {
       std::cin >> word; //index
       Node* node = &(problem_instance.nodes.at(i));
       int demand;
@@ -74,10 +107,10 @@ CVRP::Instance CVRP::Parser::build_problem()
     std::clog << "LOG:  Calculating the distance between nodes.." << std::endl;
     std::vector<double> row(problem_instance.number_of_nodes);
     std::clog << "LOG:  Creating a new temp vector for rows.." << std::endl;
-    for (int i = 0; i < problem_instance.number_of_nodes; i++)
+    for (int i = 0; i <= problem_instance.number_of_nodes; i++)
     {
       row.clear();
-      for (int j = 0; j < problem_instance.number_of_nodes; j++)
+      for (int j = 0; j <= problem_instance.number_of_nodes; j++)
       {
         row.push_back(calc_distance(problem_instance.nodes.at(i), problem_instance.nodes.at(j)));
       }
@@ -86,5 +119,11 @@ CVRP::Instance CVRP::Parser::build_problem()
 
 
     std::clog << "LOG:  Returning the temporary instance.." << std::endl;
+    std::clog << "LOG:  Instance generated.." << std::endl;
+    std::clog << "LOG:  Nodes:" << std::endl;
+    print_nodes(problem_instance);
+    std::clog << "LOG:  Distance matrix:" << std::endl;
+    print_matrix(problem_instance);
+
     return problem_instance;
   }

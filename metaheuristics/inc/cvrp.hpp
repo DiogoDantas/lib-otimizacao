@@ -1,14 +1,17 @@
 #ifndef CVRP_H
 #define  CVRP_H
-#include <string>
+#include <vector>
+#include <list>
+
 namespace CVRP {
-  class CVRP {
-    private:
-
-    public:
-      CVRP ();
-      virtual ~CVRP ();
-
-  };
+  struct Solution;
 }
+
+//cost is the total cost of the solution
+//routes is a vector {max size: number of trucks} of the routes
+struct CVRP::Solution{
+  double cost;
+  std::vector<std::list<int>> routes;
+};
+
 #endif

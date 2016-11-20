@@ -32,6 +32,8 @@ class CVRP::Parser{
       ~Parser();
       Instance build_problem();
       double calc_distance(Node node1, Node node2);
+      void print_nodes(Instance problem_instance);
+      void print_matrix(Instance problem_instance);
 };
 
 #endif
