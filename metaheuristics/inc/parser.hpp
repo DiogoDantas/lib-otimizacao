@@ -4,9 +4,9 @@
 
 //namespace definition
 namespace CVRP {
-  struct Node;
-  struct Instance;
   class Parser;
+  struct Instance;
+  struct Node;
 }
 
 //node definition
@@ -14,7 +14,9 @@ struct CVRP::Node{
    int demand;
    int x;
    int y;
+   bool marked = false;
 };
+
 
 //instance definition
 struct CVRP::Instance{
