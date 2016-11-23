@@ -81,12 +81,77 @@ CVRP::Solution CVRP::VNS::generate_initial_solution(){
 }
 
 void CVRP::VNS::calc_cost_routes(Solution& solution){
-	for(int i = 0; i < solution.trucks.size(); ++i){
-		double tmp = 0;
-		for(int j = 0; j < solution.trucks[i].route.size() - 1; ++j){
-			tmp += instance_.distance_matrix[j][j+1];
-		}
-		solution.cost += tmp;
+	double cost = 0;
+	for(auto & truck : solution.trucks){
+		cost += calc_cost_route(truck);
 	}
+
+	solution.solution_cost = cost;
+
+}
+
+double CVRP::VNS::calc_cost_route(Truck & truck){
+	
+	double cost = 0;
+
+	for(int i = 0; i < truck.route.size() - 1; ++i){
+		cost += instance_.distance_matrix[truck.route.at(i)][truck.route.at(i+1)];
+	}
+
+	return cost;
+}
+
+void CVRP::VNS::two_opt(Truck &truck){
+	int size = truck.route.size();
+	if (size<4)
+		return;
+
+	double best_cost = truck.route_cost;
+
+  //iterate over route nodes
+	for (int node = 0; node < truck.route.size(); node++)
+	{
+		int i = node + 1;
+		int k = i + 1;
+		while (k < truck.route.size())
+		{
+			Truck new_truck = two_opt_swap(truck, i, k);
+
+			if(calc_cost_route(new_truck) < calc_cost_route(truck))
+			{
+				std::clog << "AQUI" << std::endl;
+				truck = new_truck;
+			}
+			k++;
+		}
+	}
+}
+
+CVRP::Truck CVRP::VNS::two_opt_swap(Truck truck, int i, int k){
+	Truck new_truck;
+
+	std::vector<int> start (truck.route.begin(), truck.route.begin()+i);
+	std::vector<int> middle (truck.route.begin()+i, truck.route.begin()+k);
+	std::reverse(middle.begin(), middle.end());
+
+	std::vector<int> end (truck.route.begin()+k, truck.route.end());
+
+	std::move(start.begin(), start.end(),std::back_inserter(new_truck.route));
+	std::move(middle.begin(), middle.end(),std::back_inserter(new_truck.route));
+	std::move(end.begin(), end.end(),std::back_inserter(new_truck.route));
+
+	new_truck.route_cost = calc_cost_route(new_truck);
+
+	return new_truck;
+}
+
+void CVRP::VNS::local_search(Solution &current_solution)
+{
+  for (auto &truck : current_solution.trucks)
+  {
+    two_opt(truck);
+  }
+
+  calc_cost_routes(current_solution);
 
 }

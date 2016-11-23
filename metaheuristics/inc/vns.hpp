@@ -15,6 +15,10 @@ namespace CVRP{
 		Solution run();
 		Solution generate_initial_solution();
 		void calc_cost_routes(Solution& solution);
+		double calc_cost_route(Truck & truck);
+		void two_opt(Truck &truck);
+		Truck two_opt_swap(Truck truck, int i, int k);
+		void local_search(Solution &current_solution);
 
 
 	private:
