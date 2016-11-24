@@ -133,7 +133,7 @@ int CVRP::Grasp::get_closest_truck(std::vector<Truck> &trucks, Instance instance
     // }
     //   }
 
-    int index;
+    int index =0;
     /**testing for all the others**/
     for (int j = 0 ; j < trucks.size(); j++)
     {
