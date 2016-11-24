@@ -25,8 +25,8 @@ class CVRP::Grasp
     //Solution check_and_repair_solution(Solution found_solution);
     void compare_solutions(Solution found_solution, Solution &best_solution);
     void local_search(Solution &current_solution);
-    Truck& get_closest_truck(std::vector<Truck> &trucks, Instance instance, int random_node);
-    Truck two_opt_swap(Truck truck, int i, int k);
+    int get_closest_truck(std::vector<Truck> &trucks, Instance instance, int random_node);
+    Truck two_opt_swap(Truck &truck, int i, int k);
     void two_opt(Truck &truck);
     double calculate_cost(Truck truck);
     //Solution local_search(Solution current_solution);
