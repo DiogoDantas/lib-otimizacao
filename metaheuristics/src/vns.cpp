@@ -172,7 +172,7 @@ CVRP::Solution CVRP::VNS::vnd(Solution current_solution){
 	while(improve){
 		improve = false;
 		int k = 0;
-		while(k < 3){
+		while(k < 5){
 			Solution new_solution = local_search(current_solution);
 
 			if(calc_cost_routes(new_solution) < calc_cost_routes(current_solution)){
@@ -201,47 +201,79 @@ void CVRP::VNS::calc_capacity(Solution& solution){
 
 CVRP::Solution CVRP::VNS::perturbation(Solution current_solution){
 
-	//Escolhendo duas rotas de maneira aleatória
-	
-	int route_1 = 0, route_2 = 0;
-	int index_1 = 0, index_2 = 0;
+	int cout = 0;
 
-	std::random_device rd;
-	std::mt19937 gen(rd());
-	std::uniform_int_distribution<> dist(0, current_solution.trucks.size()-1);
+	while(cout < 200){
+		int route_1 = 0, route_2 = 0;
+		int index_1 = 0, index_2 = 0;
 
-	do
-	{
+		std::random_device rd;
+		std::mt19937 gen(rd());
+		std::uniform_int_distribution<> dist(0, current_solution.trucks.size()-1);
+
+		do
+		{
 		//Escolhendo a primeira rota que sera pertubada
-		route_1 = dist(gen);
+			route_1 = dist(gen);
 
 		//Escolhendo a segunda rota que sera pertubada
-		route_2 = dist(gen);
+			route_2 = dist(gen);
 
-	}while(route_1 == route_2);
+		}while(route_1 == route_2);
 
-	std::clog << route_1 << " " << route_2 << std::endl;
+		std::vector<int> first_route = current_solution.trucks.at(route_1).route;
+		std::vector<int> second_route = current_solution.trucks.at(route_2).route; 
 
-	std::uniform_int_distribution<> dist2(1, current_solution.trucks.at(route_1).route.size()-1);
-	std::uniform_int_distribution<> dist3(1, current_solution.trucks.at(route_2).route.size()-1);
+		double more_expensive_route_1 = 0;
 
-	do{
-		index_1 = dist2(gen);
+		for(int i = 0; i < first_route.size() - 2; ++i){
 
-		index_2 = dist3(gen);
+			double cost = instance_.distance_matrix[first_route.at(i)][first_route.at(i+1)];
 
-	}while(
-		((current_solution.trucks.at(route_1).capacity - instance_.nodes.at(current_solution.trucks.at(route_1).route.at(index_1)).demand)
+			if(cost > more_expensive_route_1){
+				more_expensive_route_1 = cost;
+				index_1 = i + 1;
+			}
+		}
+
+		double more_expensive_route_2 = 0;
+
+		for(int i = 0; i < second_route.size() - 2; ++i){
+
+			double cost = instance_.distance_matrix[second_route.at(i)][second_route.at(i+1)];
+
+			if(cost > more_expensive_route_2){
+				more_expensive_route_2 = cost;
+				index_2 = i + 1;
+			}
+		}
+
+		if(((current_solution.trucks.at(route_1).capacity - instance_.nodes.at(current_solution.trucks.at(route_1).route.at(index_1)).demand)
 			+ instance_.nodes.at(current_solution.trucks.at(route_2).route.at(index_2)).demand) > instance_.capacity || 
-		((current_solution.trucks.at(route_2).capacity - instance_.nodes.at(current_solution.trucks.at(route_2).route.at(index_2)).demand)
-			+ instance_.nodes.at(current_solution.trucks.at(route_1).route.at(index_1)).demand) > instance_.capacity );
+			((current_solution.trucks.at(route_2).capacity - instance_.nodes.at(current_solution.trucks.at(route_2).route.at(index_2)).demand)
+				+ instance_.nodes.at(current_solution.trucks.at(route_1).route.at(index_1)).demand) > instance_.capacity )
+		{
+			std::clog << "antes" << std::endl;
+			for(auto it = current_solution.trucks.at(route_1).route.begin(); it != current_solution.trucks.at(route_1).route.end(); ++it){
+				std::clog << *it << " ";
+			}
 
+			std::clog << std::endl;
 
-	std::clog << index_1 << " " << index_2 << std::endl;
-	int tmp = current_solution.trucks.at(route_2).route.at(index_2);
-	current_solution.trucks.at(route_2).route.at(index_2) = current_solution.trucks.at(route_1).route.at(index_1);
-	current_solution.trucks.at(route_1).route.at(index_1) = tmp;
+			int tmp = current_solution.trucks.at(route_2).route.at(index_2);
+			current_solution.trucks.at(route_2).route.at(index_2) = current_solution.trucks.at(route_1).route.at(index_1);
+			current_solution.trucks.at(route_1).route.at(index_1) = tmp;
 
+			std::clog << "depois" << std::endl;
+			for(auto it = current_solution.trucks.at(route_1).route.begin(); it != current_solution.trucks.at(route_1).route.end(); ++it){
+				std::clog << *it << " ";
+			}
+
+			std::clog << std::endl;
+		}
+
+		cout++;
+	}
 
 	return current_solution;
 }
@@ -259,8 +291,8 @@ CVRP::Solution CVRP::VNS::run(){
 
 	CVRP::Solution best_solution = improve_solution;
 
-	while(count < MAX_ITERATIONS){
-		//improve_solution = perturbation(improve_solution);
+	while(count < 200){
+		improve_solution = perturbation(improve_solution);
 		improve_solution = vnd(improve_solution);
 
 		if(calc_cost_routes(improve_solution) < calc_cost_routes(best_solution)){
