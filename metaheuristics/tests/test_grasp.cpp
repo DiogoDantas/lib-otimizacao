@@ -11,6 +11,7 @@ int main(int argc, char const *argv[]) {
 
   CVRP::Grasp grasp(problem_instance);
   CVRP::Solution best_solution = grasp.run();
-  std::cout << "Best solution: " << best_solution.cost <<std::endl;
+  std::cout << "Best solution:" <<std::endl;
+  grasp.print_solution(best_solution);
   return 0;
 }

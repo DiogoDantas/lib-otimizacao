@@ -23,9 +23,9 @@ void  CVRP::Parser::print_nodes(Instance problem_instance)
   int i =0;
   for (auto &node : problem_instance.nodes)
   {
-    std::cout << "Node: " << i << std::endl;
-    std::cout << "Postion: " << node.x <<", "<< node.y << std::endl;
-    std::cout << "Demand: " << node.demand << std::endl;
+    std::clog << "Node: " << i << std::endl;
+    std::clog << "Postion: " << node.x <<", "<< node.y << std::endl;
+    std::clog << "Demand: " << node.demand << std::endl;
     i++;
   }
 }
@@ -36,10 +36,10 @@ void  CVRP::Parser::print_matrix(Instance problem_instance)
   {
     for (auto cell : row)
     {
-      std::cout << cell <<" ";
+      std::clog << cell <<" ";
     }
 
-    std::cout << std::endl;
+    std::clog << std::endl;
   }
 
 }
@@ -59,18 +59,18 @@ CVRP::Instance CVRP::Parser::build_problem()
       if(i==12)
       {
         word.pop_back();
-        std::clog << "LOG:  Number of trucks: "+word << std::endl;
+        std::clog << "LOG:  Number of trucks: "<<word << std::endl;
         problem_instance.number_of_trucks = std::stoi(word);
       }
 
       if(i==21){
-        std::clog << "LOG:  Number of nodes: "+word << std::endl;
+        std::clog << "LOG:  Number of nodes: "<<word << std::endl;
         problem_instance.number_of_nodes = std::stoi(word);
       }
 
       if(i==27){
-        std::clog << "LOG:  Capacity of each truck: "+word << std::endl;
         problem_instance.capacity = std::stoi(word);
+        std::clog << "LOG:  Capacity of each truck: "<<problem_instance.capacity << std::endl;
       }
 
       i++;
