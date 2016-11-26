@@ -7,7 +7,7 @@
 namespace GAs {
 	// definição das constantes
 	const int GENERATION = 100000000;
-	const int POP_SIZE = 5;
+	const int POP_SIZE = 150;
 	// condição ao definir constantes PROB_CROSSOVER >= PROB_MUTATE
 	const double PROB_CROSSOVER = 0.5;
 	const double PROB_MUTATE = 0.8;
