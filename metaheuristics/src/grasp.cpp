@@ -24,9 +24,9 @@ CVRP::Solution CVRP::Grasp::run()
   Solution best_solution;
   best_solution.solution_cost = std::numeric_limits<double>::max();
   Solution found_solution;
-
+  int i = 0;
   std::chrono::high_resolution_clock::time_point start = std::chrono::high_resolution_clock::now();
-  for (int i = 0; i < MAX; i++) {
+  for ( i = 0; i < MAX; i++) {
     found_solution = construct_greedy_solution();
     local_search(found_solution);
     compare_solutions(found_solution, best_solution);
@@ -35,7 +35,7 @@ CVRP::Solution CVRP::Grasp::run()
     if((std::chrono::duration_cast<std::chrono::duration<double>>(end - start).count()) > limit)
       break;
   }
-
+  std::cout << i << std::endl;
   return best_solution;
 }
 
@@ -190,7 +190,7 @@ void CVRP::Grasp::print_solution(Solution current_solution)
 
 CVRP::Solution CVRP::Grasp::construct_greedy_solution()
 {
-  const int DEPOT = 0;
+  const int DEPOT = 1;
   Solution found_solution;
   found_solution.solution_cost = 0;
   std::random_device rd;
@@ -222,10 +222,13 @@ CVRP::Solution CVRP::Grasp::construct_greedy_solution()
     {
 
       //greedy
-      int i = get_closest_truck(trucks, instance_, random_node);
-      trucks.at(i).route_cost += instance_.distance_matrix[trucks.at(i).route.back()][random_node];
-      trucks.at(i).capacity -= instance_.nodes.at(random_node).demand;
-      trucks.at(i).route.push_back(random_node);
+      if(instance_.nodes.at(random_node).demand > 0){
+        int i = get_closest_truck(trucks, instance_, random_node);
+        trucks.at(i).route_cost += instance_.distance_matrix[trucks.at(i).route.back()][random_node];
+        trucks.at(i).capacity -= instance_.nodes.at(random_node).demand;
+        trucks.at(i).route.push_back(random_node);
+      }
+
       instance_.nodes.at(random_node).marked = true;
 
       number_of_marked++;
