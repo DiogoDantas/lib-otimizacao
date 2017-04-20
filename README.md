@@ -1,7 +1,7 @@
 # lib-otimizacao
 Uma versão embrionária de uma biblioteca de otimização open source com implementação de 15 problemas conhecidos de programação dinâmica e algoritmos gulosos
 
-##Programação dinâmica
+## Programação dinâmica
   1. Soma de Subconjuntos [@DiogoDantas](https://github.com/DiogoDantas)
   2. Mochila Binária [@DiogoDantas](https://github.com/DiogoDantas)
   3. Quebra de Palavras [@DiogoDantas](https://github.com/DiogoDantas)
@@ -12,7 +12,7 @@ Uma versão embrionária de uma biblioteca de otimização open source com imple
   8. Triângulo de Pascal [@alvesmarcos](https://github.com/alvesmarcos)
   9. Empilhamento de caixas [@alvesmarcos](https://github.com/alvesmarcos)
 
-##Algoritmos Gulosos
+## Algoritmos Gulosos
   1. Dijkstra [@DiogoDantas](https://github.com/DiogoDantas)
   2. Prim [@DiogoDantas](https://github.com/DiogoDantas)
   3. Mochila Fracionária [@anjoshigor](https://github.com/anjoshigor)
@@ -20,7 +20,7 @@ Uma versão embrionária de uma biblioteca de otimização open source com imple
   5. Compressão de dados (Código de Huffman) [@alvesmarcos](https://github.com/alvesmarcos)
   6. Seleção de Atividades [@alvesmarcos](https://github.com/alvesmarcos)
 
-###Estrutura da biblioteca
+### Estrutura da biblioteca
 `inc/` -- diretório contendo todos os cabeçalhos de cada problema.
 
 `src/` -- diretório contendo a implementação de cada problema.
@@ -33,23 +33,23 @@ Uma versão embrionária de uma biblioteca de otimização open source com imple
 
 `gerador.py` -- em alguns problemas, é possível utilizar entradas randomicas e verificar o resultado. Este script em python é responsável por gerar essas entradas.
 
-###Makefile
+### Makefile
 
-####Para testar a biblioteca
+#### Para testar a biblioteca
 
   `make all`
 
-####Para testar por categoria
+#### Para testar por categoria
 
   `make dynamic` ou `make greedy`
 
-####Para testar um problema específico
+#### Para testar um problema específico
 
   `make testD1` ou `make testG5`
   
   onde *D* significa **dinâmica** e *G* significa **gulosos** e o número identifica o problema de acordo com a lista acima
 
-#####Observação
+##### Observação
 
   Entre um teste e outro é necessário rodar
   
